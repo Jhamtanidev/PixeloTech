@@ -13,12 +13,21 @@
   <body>
     <nav>
       <a href="{% url 'users:login' %}">
-        <span role="img" aria-label="login" title="login">🏠</span>
+        <span role="img" aria-label="login" title="login">🏠Login</span>
       </a>
       |
 
       <a href="{% url 'users:register' %}">
-        <span role="img" aria-label="register" title="register">🚀</span>
+        <span role="img" aria-label="register" title="register">🚀Register</span>
+      </a>
+      |
+      <a href="{% url 'swipepic:history' %}">
+        <span role="img" aria-label="history" title="history">📰History</span> </a
+      >|
+      <a href="{% url 'swipepic:dashboard' %}">
+        <span role="img" aria-label="dashboard" title="dashboard"
+          >📩Dashboard
+        </span>
       </a>
       |
     </nav>

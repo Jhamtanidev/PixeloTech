@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+History
+{% endblock %}
+{% block content %}
+<h1>Image History</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>Image</th>
+        <th>Timestamp</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in history %}
+        <tr>
+          <td>{{ entry.action }}</td>
+          <td><img src={{ entry.image_path }} alt='img' /></td>
+          <td>{{ entry.timestamp }}</td>
+          <td>{{ user.username}}</td>
+
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

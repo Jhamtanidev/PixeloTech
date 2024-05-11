@@ -55,7 +55,7 @@ def otp_view(request):
         
         if otp == profile.otp:
             login(request,profile.user)
-            return redirect('/dashboard/',context)
+            return redirect('/swipepic/dashboard/',context)
         else:
             print('Wrong')
             
@@ -65,5 +65,6 @@ def otp_view(request):
         
     return render(request,'otp.html' , context)
 
-def dashboard_view(request):
-    return render(request,'dashboard.html')
+# for testing
+# def dashboard_view(request):
+#     return render(request,'dashboard.html')

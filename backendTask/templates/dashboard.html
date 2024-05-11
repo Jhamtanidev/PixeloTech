@@ -1,3 +1,37 @@
+
+{% extends 'base.html' %}
+{% load static %}
 Welcome
 {{user.first_name}} 
 you are loged in 
+<img src="{% static '1.png' %}" /> 
+
+
+
+
+{% block content %}
+<div class="alert alert-{{class}}">
+  <strong>{{welcome_message}}</strong>
+ </div>
+  <h1>View Images</h1>
+  <p>Image {{ image_index|add:1 }} of {{ total_images }}</p>
+
+  <img src="{{image_path }}" alt="{{ image_name }}">
+
+  <form method="post" id="action-form">
+    {% csrf_token %}
+    <input type="hidden" name="action" id="action-input">
+    <button type="submit" name="action" value="left">Reject</button>
+    <button type="submit" name="action" value="right">Accept</button>
+  </form>
+  {% if message %}
+        <div class="alert alert-{{class}}">
+         <strong>{{message}}</strong>
+        </div>
+        <p>select/reject more <a href="{% url 'swipepic:dashboard' %}">
+          <span role="img" aria-label="dashboard" title="dashboard">dashboard </span>
+      </a> </p>
+        {% endif %}
+
+        
+{% endblock %}
