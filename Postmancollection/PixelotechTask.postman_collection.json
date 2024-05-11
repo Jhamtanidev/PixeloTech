@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "57384cea-0937-48af-8b7d-44015ae491cd",
+		"name": "PixelotechTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23402887"
+	},
+	"item": [
+		{
+			"name": "users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/register/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "webdev@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "webdev",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "+919638570210",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/otp/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/otp/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"otp",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/swipepic/dashboard/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000//swipepic/dashboard/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"",
+						"swipepic",
+						"dashboard",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/swipepic/history/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000//swipepic/history/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"",
+						"swipepic",
+						"history",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
