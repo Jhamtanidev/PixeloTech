@@ -18,17 +18,19 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env_file = os.path.join(BASE_DIR, '.env')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(5j5o_s)km!_p2p)4dpo1eop-8%2r@8_l+_fnu)upy2l_$q@u$'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['.vercel.app','.now.sh']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh','127.0.0.1']
 
 
 # Application definition
@@ -82,15 +84,15 @@ DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'TGZqjsVZbNrNeMqNsteRUaEFdZDZXqDd',
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '27753',
+        'NAME': config('DATABASE_NAME'),
+        'USER': config('DATABASE_USER'),
+        'PASSWORD': config('DATABASE_PASSWORD'),
+        'HOST': config('DATABASE_HOST'),
+        'PORT': config('DATABASE_PORT'),
     
     }
 }
-DATABASES['default'] = dj_database_url.config()
+DATABASES['default'] = dj_database_url.config('DATABASE_URL')
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -132,8 +134,8 @@ STATICFILES_DIRS = os.path.join(
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
 STATIC_URL = 'static/'
 # twilio keys
-ACCOUNT_SID="AC3f8acb8bb13934e35dbd9a747549f893"
-AUTH_TOKEN = "0ad090451cc8f1b9becc4f1eaf86fab8"
+ACCOUNT_SID=config('ACCOUNT_SID')
+AUTH_TOKEN = config('AUTH_TOKEN')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
