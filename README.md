@@ -70,3 +70,10 @@ To get a local copy up and running, follow these steps:
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
+
+## Demo
+
+Here's a demo video showing how the project works:
+
+![Project Demo](https://drive.google.com/file/d/1S57_Kp-jUDNSL13wyfXBoXeIknJOeslb/view?usp=sharing)
+
