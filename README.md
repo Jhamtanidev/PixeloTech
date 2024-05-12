@@ -75,5 +75,5 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 
 Here's a demo video showing how the project works:
 
-![Project Demo](https://drive.google.com/file/d/1S57_Kp-jUDNSL13wyfXBoXeIknJOeslb/view?usp=sharing)
+```https://youtu.be/upQ8KEPoQ7c```
 
