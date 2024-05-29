@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['.vercel.app','.now.sh','127.0.0.1','.netlify.app']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh','127.0.0.1','.netlify.app','https://swipepic.netlify.app/','18.213.222.111','35.169.59.174']
 
 
 # Application definition
