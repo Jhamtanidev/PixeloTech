@@ -26,12 +26,16 @@ env_file = os.path.join(BASE_DIR, '.env')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
-
+SECURE_HSTS_SECONDS=['*']
+SECURE_HSTS_INCLUDE_SUBDOMAINS=True
+SECURE_SSL_REDIRECT=True
+SESSION_COOKIE_SECURE=True
+CSRF_COOKIE_SECURE=True
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
-
-ALLOWED_HOSTS = ['.vercel.app','.now.sh','127.0.0.1','.netlify.app','https://swipepic.netlify.app/','18.213.222.111','35.169.59.174','*']
-
+# DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG=False
+ALLOWED_HOSTS = ['*']
+SECURE_HSTS_PRELOAD=True
 
 # Application definition
 
@@ -89,9 +93,10 @@ DATABASES = {
         'PASSWORD': config('DATABASE_PASSWORD'),
         'HOST': config('DATABASE_HOST'),
         'PORT': config('DATABASE_PORT'),
-    
+        'URL':config('DATABASE_URL')
     }
 }
+DATABASE_URL = config('DATABASE_URL')
 DATABASES['default'] = dj_database_url.config('DATABASE_URL')
 
 # Password validation
